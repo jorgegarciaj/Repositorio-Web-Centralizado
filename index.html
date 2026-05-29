@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hub de Automatizaciones | Carteras Abonos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased flex h-screen overflow-hidden">
+
+    <aside class="w-72 bg-slate-900 text-slate-200 flex flex-col justify-between hidden md:flex border-r border-slate-800">
+        <div class="p-6">
+            <div class="flex items-center gap-3 mb-8">
+                <div class="bg-blue-600 p-2 rounded-lg text-white">
+                    <i data-lucide="cpu" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg leading-tight text-white">AutoHub</h1>
+                    <p class="text-xs text-slate-400">Carteras Abonos</p>
+                </div>
+            </div>
+            
+            <nav class="space-y-1">
+                <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2 px-3">Documentación</p>
+                <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-slate-800 text-white font-medium transition-all">
+                    <i data-lucide="layout-dashboard" class="w-4 h-4 text-blue-400"></i> Dashboard
+                </a>
+                <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-slate-200 transition-all">
+                    <i data-lucide="moon" class="w-4 h-4"></i> Ciclos Nocturnos
+                </a>
+                <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-slate-200 transition-all">
+                    <i data-lucide="sun" class="w-4 h-4"></i> Procesos Diurnos
+                </a>
+            </nav>
+        </div>
+        <div class="p-6 border-t border-slate-800 text-xs text-slate-500">
+            v1.0.0 • Actualizado mayo 2026
+        </div>
+    </aside>
+
+    <main class="flex-1 flex flex-col overflow-y-auto">
+        
+        <header class="bg-white border-b border-slate-200 px-8 py-4 flex items-center justify-between sticky top-0 z-10">
+            <div class="relative w-96">
+                <i data-lucide="search" class="w-4 h-4 absolute left-3 top-3.5 text-slate-400"></i>
+                <input type="text" placeholder="Buscar automatización (ej. OsDigital)..." class="w-full bg-slate-100 text-sm pl-10 pr-4 py-2.5 rounded-xl border border-transparent focus:outline-none focus:border-blue-500 focus:bg-white transition-all">
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="flex h-2 w-2 relative">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                </span>
+                <span class="text-xs font-medium text-slate-600 bg-slate-100 px-3 py-1.5 rounded-full">Sistemas Estables</span>
+            </div>
+        </header>
+
+        <div class="p-8 max-w-5xl w-full mx-auto space-y-8">
+            
+            <div>
+                <h2 class="text-2xl font-bold text-slate-900 tracking-tight">Repositorio de Automatizaciones</h2>
+                <p class="text-slate-500 text-sm mt-1">Control, impacto y estatus de los proyectos del equipo.</p>
+            </div>
+
+            <section class="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all overflow-hidden">
+                <div class="p-6 border-b border-slate-100 bg-gradient-to-r from-slate-50 to-white flex justify-between items-center flex-wrap gap-3">
+                    <div class="flex items-center gap-3">
+                        <span class="text-xl">1️⃣</span>
+                        <h3 class="text-lg font-bold text-slate-900">Ciclos productivos abonos y cobranza / Cartera en línea</h3>
+                    </div>
+                    <span class="bg-green-50 text-green-700 text-xs font-semibold px-3 py-1 rounded-full border border-green-200">Producción</span>
+                </div>
+                
+                <div class="p-6 space-y-4">
+                    <div>
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">EL QUÉ</h4>
+                        <p class="text-slate-700 text-sm leading-relaxed">Ejecución y supervisión de los ciclos productivos nocturnos correspondientes a las operaciones de abonos, cobranza y cartera en línea, garantizando la continuidad operativa del sistema.</p>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6 pt-2">
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">IMPACTO A NEGOCIO</h4>
+                            <p class="text-slate-700 text-sm leading-relaxed">Mitigación proactiva de riesgos operativos, previniendo fallas críticas o retrasos en el procesamiento de datos financieros que pudieran afectar la experiencia del cliente y la conciliación diaria.</p>
+                        </div>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">CIFRA</h4>
+                                <div class="flex items-center gap-2 mt-1">
+                                    <span class="text-2xl font-extrabold text-blue-600">100%</span>
+                                    <span class="text-xs text-slate-500">Actividades exitosas / 0 retrasos</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">EQUIPO</h4>
+                                <p class="text-sm font-medium text-slate-700">Carteras Abonos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all overflow-hidden">
+                <div class="p-6 border-b border-slate-100 bg-gradient-to-r from-slate-50 to-white flex justify-between items-center flex-wrap gap-3">
+                    <div class="flex items-center gap-3">
+                        <span class="text-xl">2️⃣</span>
+                        <h3 class="text-lg font-bold text-slate-900">Automatización del proceso Tercerización y OsDigital</h3>
+                    </div>
+                    <span class="bg-amber-50 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full border border-amber-200">En Desarrollo</span>
+                </div>
+                
+                <div class="p-6 space-y-4">
+                    <div>
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">EL QUÉ</h4>
+                        <p class="text-slate-700 text-sm leading-relaxed">Automatización de los procesos de Tercerización y OsDigital alojados en la hoja de actividades diarias diurnas.</p>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6 pt-2">
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">IMPACTO A NEGOCIO</h4>
+                            <p class="text-slate-700 text-sm leading-relaxed">Transformación digital de tareas manuales que garantiza la seguridad de la información, disminuye drásticamente la probabilidad de errores humanos y asegura la entrega del producto final.</p>
+                        </div>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">CIFRA / AVANCE</h4>
+                                <div class="mt-1 space-y-2">
+                                    <div class="flex items-baseline gap-2">
+                                        <span class="text-2xl font-extrabold text-amber-600">90%</span>
+                                        <span class="text-xs text-slate-500">Avance global</span>
+                                    </div>
+                                    <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                                        <div class="bg-amber-500 h-full rounded-full" style="width: 90%"></div>
+                                    </div>
+                                    <p class="text-xs text-slate-500 italic">Pendiente: anexar las nuevas indicaciones a la hoja de actividades diurna.</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">EQUIPO</h4>
+                                <p class="text-sm font-medium text-slate-700">Carteras Abonos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

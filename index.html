@@ -6,134 +6,209 @@
     <title>Hub de Automatizaciones | Carteras Abonos</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Fuente moderna 'Plus Jakarta Sans' de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        /* Animación de brillo para barras de progreso */
+        .shimmer {
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite linear;
+        }
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased flex h-screen overflow-hidden">
+<body class="bg-slate-50 text-slate-800 antialiased flex h-screen overflow-hidden bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-50/50 via-slate-50 to-slate-50">
 
-    <aside class="w-72 bg-slate-900 text-slate-200 flex flex-col justify-between hidden md:flex border-r border-slate-800">
+    <aside class="w-72 bg-gradient-to-b from-slate-950 via-indigo-950/90 to-slate-950 flex-col justify-between hidden md:flex border-r border-indigo-900/30 relative z-20 shadow-[4px_0_24px_rgba(0,0,0,0.1)]">
         <div class="p-6">
-            <div class="flex items-center gap-3 mb-8">
-                <div class="bg-blue-600 p-2 rounded-lg text-white">
-                    <i data-lucide="cpu" class="w-6 h-6"></i>
+            <!-- Logo y Título -->
+            <div class="flex items-center gap-3 mb-10 group cursor-pointer">
+                <div class="bg-gradient-to-br from-blue-500 to-indigo-600 p-2.5 rounded-xl shadow-lg shadow-blue-500/30 ring-1 ring-white/10 transition-transform group-hover:scale-105">
+                    <i data-lucide="cpu" class="w-6 h-6 text-white"></i>
                 </div>
                 <div>
-                    <h1 class="font-bold text-lg leading-tight text-white">AutoHub</h1>
-                    <p class="text-xs text-slate-400">Carteras Abonos</p>
+                    <h1 class="font-extrabold text-xl leading-tight text-white tracking-tight">AutoHub</h1>
+                    <p class="text-xs text-indigo-300/80 font-medium tracking-wide">Carteras Abonos</p>
                 </div>
             </div>
             
-            <nav class="space-y-1">
-                <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2 px-3">Documentación</p>
-                <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-slate-800 text-white font-medium transition-all">
-                    <i data-lucide="layout-dashboard" class="w-4 h-4 text-blue-400"></i> Dashboard
+            <!-- Navegación -->
+            <nav class="space-y-1.5">
+                <p class="text-[10px] font-bold text-indigo-300/50 uppercase tracking-widest mb-3 px-3">Documentación</p>
+                
+                <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-indigo-600/15 text-indigo-200 font-semibold border border-indigo-500/20 shadow-[0_0_15px_rgba(79,70,229,0.1)] transition-all">
+                    <i data-lucide="layout-dashboard" class="w-4 h-4 text-indigo-400"></i> Dashboard
                 </a>
-                <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-slate-200 transition-all">
-                    <i data-lucide="moon" class="w-4 h-4"></i> Ciclos Nocturnos
+                
+                <a href="#" class="group flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 font-medium hover:bg-white/5 hover:text-indigo-200 transition-all duration-300">
+                    <i data-lucide="moon" class="w-4 h-4 text-slate-500 group-hover:text-indigo-400 transition-colors"></i> Ciclos Nocturnos
                 </a>
-                <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-slate-200 transition-all">
-                    <i data-lucide="sun" class="w-4 h-4"></i> Procesos Diurnos
+                
+                <a href="#" class="group flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 font-medium hover:bg-white/5 hover:text-indigo-200 transition-all duration-300">
+                    <i data-lucide="sun" class="w-4 h-4 text-slate-500 group-hover:text-indigo-400 transition-colors"></i> Procesos Diurnos
                 </a>
             </nav>
         </div>
-        <div class="p-6 border-t border-slate-800 text-xs text-slate-500">
-            v1.0.0 • Actualizado mayo 2026
+        <div class="p-6 border-t border-white/5 text-xs text-indigo-200/40 font-medium flex items-center justify-between">
+            <span>v1.0.0</span>
+            <span>Actualizado mayo 2026</span>
         </div>
     </aside>
 
-    <main class="flex-1 flex flex-col overflow-y-auto">
+    <main class="flex-1 flex flex-col overflow-y-auto relative">
         
-        <header class="bg-white border-b border-slate-200 px-8 py-4 flex items-center justify-between sticky top-0 z-10">
-            <div class="relative w-96">
-                <i data-lucide="search" class="w-4 h-4 absolute left-3 top-3.5 text-slate-400"></i>
-                <input type="text" placeholder="Buscar automatización (ej. OsDigital)..." class="w-full bg-slate-100 text-sm pl-10 pr-4 py-2.5 rounded-xl border border-transparent focus:outline-none focus:border-blue-500 focus:bg-white transition-all">
+        <!-- Header (Glassmorphism) -->
+        <header class="sticky top-0 z-50 backdrop-blur-xl bg-white/70 border-b border-slate-200/50 px-8 py-4 flex items-center justify-between shadow-sm shadow-slate-200/20">
+            <div class="relative w-96 group">
+                <i data-lucide="search" class="w-4 h-4 absolute left-3.5 top-3 text-slate-400 group-focus-within:text-indigo-500 transition-colors"></i>
+                <input type="text" placeholder="Buscar automatización (ej. OsDigital)..." class="w-full bg-slate-100/80 text-sm font-medium pl-10 pr-4 py-2.5 rounded-xl border-2 border-transparent focus:outline-none focus:border-indigo-500/20 focus:bg-white focus:ring-4 focus:ring-indigo-500/10 transition-all placeholder:text-slate-400">
             </div>
-            <div class="flex items-center gap-3">
-                <span class="flex h-2 w-2 relative">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                </span>
-                <span class="text-xs font-medium text-slate-600 bg-slate-100 px-3 py-1.5 rounded-full">Sistemas Estables</span>
+            
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2 bg-emerald-50/80 border border-emerald-100 px-3 py-1.5 rounded-full shadow-sm">
+                    <span class="flex h-2.5 w-2.5 relative">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
+                    </span>
+                    <span class="text-xs font-bold text-emerald-700 tracking-wide">Sistemas Estables</span>
+                </div>
             </div>
         </header>
 
-        <div class="p-8 max-w-5xl w-full mx-auto space-y-8">
+        <div class="p-8 max-w-5xl w-full mx-auto space-y-8 pb-20">
             
-            <div>
-                <h2 class="text-2xl font-bold text-slate-900 tracking-tight">Repositorio de Automatizaciones</h2>
-                <p class="text-slate-500 text-sm mt-1">Control, impacto y estatus de los proyectos del equipo.</p>
+            <div class="space-y-1.5">
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Repositorio de Automatizaciones</h2>
+                <p class="text-slate-500 text-sm font-medium">Control, impacto y estatus de los proyectos del equipo.</p>
             </div>
 
-            <section class="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all overflow-hidden">
-                <div class="p-6 border-b border-slate-100 bg-gradient-to-r from-slate-50 to-white flex justify-between items-center flex-wrap gap-3">
+            <!-- Tarjeta 1: Producción -->
+            <section class="group bg-white rounded-2xl border border-slate-200/60 shadow-sm hover:shadow-xl hover:shadow-indigo-100/50 transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                <div class="p-6 border-b border-slate-100 bg-gradient-to-r from-slate-50/50 to-white flex justify-between items-center flex-wrap gap-3">
                     <div class="flex items-center gap-3">
-                        <span class="text-xl">1️⃣</span>
+                        <div class="bg-indigo-100/50 p-2 rounded-lg border border-indigo-100">
+                            <span class="text-xl">1️⃣</span>
+                        </div>
                         <h3 class="text-lg font-bold text-slate-900">Ciclos productivos abonos y cobranza / Cartera en línea</h3>
                     </div>
-                    <span class="bg-green-50 text-green-700 text-xs font-semibold px-3 py-1 rounded-full border border-green-200">Producción</span>
+                    
+                    <div class="flex items-center gap-1.5 bg-emerald-50 text-emerald-700 text-xs font-bold px-3 py-1.5 rounded-full border border-emerald-200 shadow-sm">
+                        <div class="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
+                        Producción
+                    </div>
                 </div>
                 
-                <div class="p-6 space-y-4">
+                <div class="p-6 space-y-6">
                     <div>
-                        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">EL QUÉ</h4>
-                        <p class="text-slate-700 text-sm leading-relaxed">Ejecución y supervisión de los ciclos productivos nocturnos correspondientes a las operaciones de abonos, cobranza y cartera en línea, garantizando la continuidad operativa del sistema.</p>
-                    </div>
-                    <div class="grid md:grid-cols-2 gap-6 pt-2">
-                        <div>
-                            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">IMPACTO A NEGOCIO</h4>
-                            <p class="text-slate-700 text-sm leading-relaxed">Mitigación proactiva de riesgos operativos, previniendo fallas críticas o retrasos en el procesamiento de datos financieros que pudieran afectar la experiencia del cliente y la conciliación diaria.</p>
+                        <div class="flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-widest text-slate-400 mb-2">
+                            <i data-lucide="target" class="w-3.5 h-3.5"></i> EL QUÉ
                         </div>
-                        <div class="space-y-4">
+                        <p class="text-slate-600 text-sm leading-relaxed font-medium">Ejecución y supervisión de los ciclos productivos nocturnos correspondientes a las operaciones de abonos, cobranza y cartera en línea, garantizando la continuidad operativa del sistema.</p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 pt-2">
+                        <div>
+                            <div class="flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-widest text-slate-400 mb-2">
+                                <i data-lucide="trending-up" class="w-3.5 h-3.5"></i> IMPACTO A NEGOCIO
+                            </div>
+                            <p class="text-slate-600 text-sm leading-relaxed font-medium">Mitigación proactiva de riesgos operativos, previniendo fallas críticas o retrasos en el procesamiento de datos financieros que pudieran afectar la experiencia del cliente y la conciliación diaria.</p>
+                        </div>
+                        
+                        <div class="space-y-6 bg-slate-50/50 p-4 rounded-xl border border-slate-100">
                             <div>
-                                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">CIFRA</h4>
-                                <div class="flex items-center gap-2 mt-1">
-                                    <span class="text-2xl font-extrabold text-blue-600">100%</span>
-                                    <span class="text-xs text-slate-500">Actividades exitosas / 0 retrasos</span>
+                                <div class="flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-widest text-slate-400 mb-1">
+                                    <i data-lucide="bar-chart-2" class="w-3.5 h-3.5"></i> CIFRA
+                                </div>
+                                <div class="flex items-baseline gap-2.5 mt-1">
+                                    <span class="text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 tracking-tight">100%</span>
+                                    <span class="text-xs font-medium text-slate-500">Actividades exitosas / 0 retrasos</span>
                                 </div>
                             </div>
                             <div>
-                                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">EQUIPO</h4>
-                                <p class="text-sm font-medium text-slate-700">Carteras Abonos</p>
+                                <div class="flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-widest text-slate-400 mb-1">
+                                    <i data-lucide="users" class="w-3.5 h-3.5"></i> EQUIPO
+                                </div>
+                                <p class="text-sm font-bold text-slate-700 bg-white inline-block px-2.5 py-1 rounded-md border border-slate-200 shadow-sm mt-1">Carteras Abonos</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section class="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all overflow-hidden">
-                <div class="p-6 border-b border-slate-100 bg-gradient-to-r from-slate-50 to-white flex justify-between items-center flex-wrap gap-3">
+            <!-- Tarjeta 2: En Desarrollo -->
+            <section class="group bg-white rounded-2xl border border-slate-200/60 shadow-sm hover:shadow-xl hover:shadow-amber-100/50 transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                <div class="p-6 border-b border-slate-100 bg-gradient-to-r from-slate-50/50 to-white flex justify-between items-center flex-wrap gap-3">
                     <div class="flex items-center gap-3">
-                        <span class="text-xl">2️⃣</span>
+                        <div class="bg-amber-50 p-2 rounded-lg border border-amber-100">
+                            <span class="text-xl">2️⃣</span>
+                        </div>
                         <h3 class="text-lg font-bold text-slate-900">Automatización del proceso Tercerización y OsDigital</h3>
                     </div>
-                    <span class="bg-amber-50 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full border border-amber-200">En Desarrollo</span>
+                    
+                    <div class="flex items-center gap-1.5 bg-amber-50 text-amber-700 text-xs font-bold px-3 py-1.5 rounded-full border border-amber-200 shadow-sm">
+                        <span class="relative flex h-2 w-2">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+                        </span>
+                        En Desarrollo
+                    </div>
                 </div>
                 
-                <div class="p-6 space-y-4">
+                <div class="p-6 space-y-6">
                     <div>
-                        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">EL QUÉ</h4>
-                        <p class="text-slate-700 text-sm leading-relaxed">Automatización de los procesos de Tercerización y OsDigital alojados en la hoja de actividades diarias diurnas.</p>
-                    </div>
-                    <div class="grid md:grid-cols-2 gap-6 pt-2">
-                        <div>
-                            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">IMPACTO A NEGOCIO</h4>
-                            <p class="text-slate-700 text-sm leading-relaxed">Transformación digital de tareas manuales que garantiza la seguridad de la información, disminuye drásticamente la probabilidad de errores humanos y asegura la entrega del producto final.</p>
+                        <div class="flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-widest text-slate-400 mb-2">
+                            <i data-lucide="target" class="w-3.5 h-3.5"></i> EL QUÉ
                         </div>
-                        <div class="space-y-4">
+                        <p class="text-slate-600 text-sm leading-relaxed font-medium">Automatización de los procesos de Tercerización y OsDigital alojados en la hoja de actividades diarias diurnas.</p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 pt-2">
+                        <div>
+                            <div class="flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-widest text-slate-400 mb-2">
+                                <i data-lucide="trending-up" class="w-3.5 h-3.5"></i> IMPACTO A NEGOCIO
+                            </div>
+                            <p class="text-slate-600 text-sm leading-relaxed font-medium">Transformación digital de tareas manuales que garantiza la seguridad de la información, disminuye drásticamente la probabilidad de errores humanos y asegura la entrega del producto final.</p>
+                        </div>
+                        
+                        <div class="space-y-6 bg-slate-50/50 p-4 rounded-xl border border-slate-100">
                             <div>
-                                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">CIFRA / AVANCE</h4>
-                                <div class="mt-1 space-y-2">
-                                    <div class="flex items-baseline gap-2">
-                                        <span class="text-2xl font-extrabold text-amber-600">90%</span>
-                                        <span class="text-xs text-slate-500">Avance global</span>
+                                <div class="flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-widest text-slate-400 mb-1">
+                                    <i data-lucide="bar-chart-2" class="w-3.5 h-3.5"></i> CIFRA / AVANCE
+                                </div>
+                                <div class="mt-2 space-y-3">
+                                    <div class="flex items-baseline gap-2.5">
+                                        <span class="text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-orange-500 tracking-tight">90%</span>
+                                        <span class="text-xs font-medium text-slate-500">Avance global</span>
                                     </div>
-                                    <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                                        <div class="bg-amber-500 h-full rounded-full" style="width: 90%"></div>
+                                    
+                                    <!-- Barra de progreso con gradiente y animación -->
+                                    <div class="w-full bg-slate-200/60 h-2.5 rounded-full overflow-hidden shadow-inner">
+                                        <div class="bg-gradient-to-r from-amber-400 to-orange-500 h-full rounded-full relative" style="width: 90%">
+                                            <div class="absolute inset-0 shimmer"></div>
+                                        </div>
                                     </div>
-                                    <p class="text-xs text-slate-500 italic">Pendiente: anexar las nuevas indicaciones a la hoja de actividades diurna.</p>
+                                    <p class="text-[11px] text-slate-500 italic font-medium flex items-center gap-1">
+                                        <i data-lucide="info" class="w-3 h-3 text-amber-500"></i>
+                                        Pendiente: anexar las nuevas indicaciones a la hoja de actividades diurna.
+                                    </p>
                                 </div>
                             </div>
                             <div>
-                                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">EQUIPO</h4>
-                                <p class="text-sm font-medium text-slate-700">Carteras Abonos</p>
+                                <div class="flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-widest text-slate-400 mb-1">
+                                    <i data-lucide="users" class="w-3.5 h-3.5"></i> EQUIPO
+                                </div>
+                                <p class="text-sm font-bold text-slate-700 bg-white inline-block px-2.5 py-1 rounded-md border border-slate-200 shadow-sm mt-1">Carteras Abonos</p>
                             </div>
                         </div>
                     </div>
